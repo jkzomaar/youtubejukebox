@@ -6,3 +6,9 @@ document.getElementById("query")
         document.getElementById("search-button").click();
     }
 });
+
+//enable search button when typing new query (to avoid spamming)
+document.getElementById("query")
+    .addEventListener("keypress", function() {
+        document.getElementById("search-button").disabled = false; 
+});

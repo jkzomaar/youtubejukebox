@@ -6,6 +6,7 @@ function handleAPILoaded() {
 // Search for a specified string.
 function search() {
   window.scrollTo(0,0);
+  document.getElementById("search-button").disabled = true; 
   var q = $('#query').val() + " song";
   var request = gapi.client.youtube.search.list({
     q: q,
