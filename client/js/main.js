@@ -14,5 +14,5 @@ document.getElementById("query")
 });
 
 function showQ(){
- $('#search-container').html('</br></br></br><pre class="block-center">todo: implement queue viewer</pre>'); 
+ $('#search-container').html('<pre class="block-center">todo: implement queue viewer</pre>'); 
 }

@@ -6,3 +6,6 @@
   bottom: 50px;
   width: calc(100% - 60px);
 }
+#search-container{
+  margin-top: 75px;
+}
