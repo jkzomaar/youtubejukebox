@@ -1,3 +1,7 @@
+html {
+  min-height: 100%;
+}
+
 body {
   background: url('../img/jukebox-blur.jpg') no-repeat fixed;
   background-size: cover;
@@ -50,9 +54,9 @@ body {
 }
 
 .container {
-  padding: 0;
+  padding: 0 !important;
   width: 100% !important;
-  padding-top: 50px;
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 620px) {
