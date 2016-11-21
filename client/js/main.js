@@ -12,3 +12,7 @@ document.getElementById("query")
     .addEventListener("keypress", function() {
         document.getElementById("search-button").disabled = false; 
 });
+
+function showQ(){
+ $('#search-container').html('</br></br></br><pre class="block-center">todo: implement queue viewer</pre>'); 
+}
