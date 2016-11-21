@@ -1,3 +1,8 @@
+body {
+  background: url('../img/jukebox-blur.jpg') no-repeat fixed;
+  background-size: cover;
+}
+
 .searchresult{
   min-height: 580px;
 }
@@ -6,6 +11,51 @@
   bottom: 50px;
   width: calc(100% - 60px);
 }
-#search-container{
-  margin-top: 75px;
+
+.custom-navbar {
+  margin-bottom: 0 !important;
+}
+
+#search-result{
+  margin-top: 15px;
+}
+
+.jkBold {
+  font-weight: bold !important;
+}
+
+.jkSearchBtn {
+    border: #000 solid 1px;
+}
+
+.jkSearchField {
+  border: 1px #000 solid;
+}
+
+.big-label {
+  font-size: 36px;
+}
+
+.wrapper {
+  width: 90%;
+  margin: 0 auto 0 auto;
+}
+
+.body-header {
+  background-color: rgba(255,255,255,0.5);
+  height: auto;
+  padding: 15px 0 15px 0;
+  width: 100%;
+  /*filter: blur(5px);*/
+}
+
+.container {
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+@media screen and (max-width: 620px) {
+  .big-label {
+    font-size: 32px;
+  }
 }

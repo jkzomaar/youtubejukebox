@@ -1,3 +1,11 @@
+$( document ).ready(function() {
+    $('#search-button').click(function(){
+      search();
+    });
+
+});
+
+
 // After the API loads, call a function to enable the search box.
 function handleAPILoaded() {
   $('#search-button').attr('disabled', false);
@@ -6,7 +14,7 @@ function handleAPILoaded() {
 // Search for a specified string.
 function search() {
   window.scrollTo(0,0);
-  document.getElementById("search-button").disabled = true; 
+  document.getElementById("search-button").disabled = true;
   var q = $('#query').val() + " song";
   var request = gapi.client.youtube.search.list({
     q: q,
@@ -18,16 +26,18 @@ function search() {
 
   request.execute(function(response) {
     //var str = JSON.stringify(response.result);
-    //$('#search-container').html('<pre>' + str + '</pre>');
     var json = response.result;
-    $('#search-container').html('');
-    $('#search-container').append('<div id="results" class="row">');
-    for(var i = 0; i < json.items.length; i++) {
-    var obj = json.items[i];
-    console.log(obj.snippet.title);
-    $('#search-container').append('<div class="col-sm-4 col-md-4 col-lg-3"><div class="searchresult thumbnail"><img src="' + obj.snippet.thumbnails.high.url + '" alt="thumbnail"><div class="caption"><h3 class="vtitle">' + obj.snippet.title + '</h3><p class="description">' + obj.snippet.description + '</p><p><a href="#" class="btn btn-warning btn-lg center-block qbutton" role="button">Put in Queue</a></div></div></div>');
-} 
-    $('#search-container').append('</div>');
+    var html = '';
+    // it is more performant to calculate the length once
+    var arrayLength = json.items.length;
+
+    for(var i = 0; i < arrayLength; i++){
+      html += '<div class="col-sm-4  col-md-4 col-lg-3"><div class="searchresult thumbnail">';
+      html += '<img src="' + json.items[i].snippet.thumbnails.high.url  + '" alt="thumbnail">';
+      html += '<div class="caption"><h3 class="vtitle">' + json.items[i].snippet.title + '</h3>';
+      html += '<p class="description">' + json.items[i].snippet.description + '</p>';
+      html += '<p><a href="#" class="btn btn-warning btn-lg center-block qbutton" role="button">Put in Queue</a></div></div></div>';
+    }
+    $('#search-result').html(html);
   });
 }
-
