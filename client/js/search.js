@@ -25,7 +25,7 @@ function search() {
   });
 
   request.execute(function(response) {
-    //var str = JSON.stringify(response.result);
+    document.activeElement.blur();
     var json = response.result;
     var html = '';
     // it is more performant to calculate the length once
