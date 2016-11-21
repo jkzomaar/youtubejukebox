@@ -24,12 +24,16 @@ body {
   margin-top: 15px;
 }
 
+.queueBtn {
+  height: 50px;
+}
+
 .jkBold {
   font-weight: bold !important;
 }
 
 .jkSearchBtn {
-    border: #000 solid 1px;
+  border: #000 solid 1px;
 }
 
 .jkSearchField {
@@ -63,8 +67,20 @@ body {
   .big-label {
     font-size: 20px;
   }
-.searchresult{
-  min-height: 1px;
-  padding-bottom: 120px;
+  .searchresult{
+    min-height: 1px;
+  }
 }
+@media screen and (max-width: 767px) {
+  .big-label {
+    font-size: 20px;
+  }
+  .searchresult{
+    min-height: 0 !important;
+  }
+  .qbutton{
+    width: 95%;
+    position: relative;
+    bottom: 0;
+  }
 }
