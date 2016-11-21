@@ -45,6 +45,10 @@ body {
   margin: 0 auto 0 auto;
 }
 
+#search-container {
+  width: 60% !important;
+  margin: 0 auto 0 auto;
+}
 .body-header {
   background-color: rgba(255,255,255,0.5);
   height: auto;
@@ -66,5 +70,9 @@ body {
 .searchresult{
   min-height: 1px;
   padding-bottom: 120px;
+}
+#search-container {
+  width: 90% !important;
+  margin: 0 auto 0 auto;
 }
 }
