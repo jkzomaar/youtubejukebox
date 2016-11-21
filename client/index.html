@@ -8,12 +8,12 @@
 </head>
 
 <body onload="Start();">
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Playlist Updater</a>
+                <a class="navbar-brand" href="#">JukeBox</a>
             </div>
-            <form class="navbar-form navbar-left">
+            <form class="navbar-form navbar-right">
                 <div class="form-group">
                     <input id="query" type="text" class="form-control" placeholder="Search">
                 </div>
@@ -25,6 +25,7 @@
         <div class="row">
             <div id="search-container">
             </div>
+
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
             <script src="js/search.js"></script>
             <script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
