@@ -61,7 +61,7 @@ body {
 
 @media screen and (max-width: 620px) {
   .big-label {
-    font-size: 24px;
+    font-size: 20px;
   }
 .searchresult{
   min-height: 1px;
