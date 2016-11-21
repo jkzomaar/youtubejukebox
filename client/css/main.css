@@ -50,8 +50,9 @@ body {
 }
 
 .container {
-  padding: 0 !important;
+  padding: 0;
   width: 100% !important;
+  padding-top: 50px;
 }
 
 @media screen and (max-width: 620px) {
