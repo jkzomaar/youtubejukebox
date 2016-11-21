@@ -1,6 +1,8 @@
-.description{
-  height: 100%;
+.searchresult{
+  min-height: 580px;
 }
-.vtitle{
-  height: 100px;
+.qbutton{
+  position: absolute;
+  bottom: 50px;
+  width: calc(100% - 60px);
 }
