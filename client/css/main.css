@@ -41,7 +41,7 @@ body {
 }
 
 .big-label {
-  font-size: 36px;
+  font-size: 32px;
 }
 
 .wrapper {
@@ -74,6 +74,10 @@ body {
   .searchresult{
     min-height: 1px;
   }
+#search-container {
+  width: 90% !important;
+  margin: 0 auto 0 auto;
+}
 }
 @media screen and (max-width: 767px) {
   .big-label {
@@ -87,4 +91,8 @@ body {
     position: relative;
     bottom: 0;
   }
+#search-container {
+  width: 90% !important;
+  margin: 0 auto 0 auto;
+}
 }
