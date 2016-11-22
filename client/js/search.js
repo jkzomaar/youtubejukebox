@@ -31,7 +31,7 @@ function search() {
     // it is more performant to calculate the length once
     var arrayLength = json.items.length;
 
-    html += '<div class="grid">';
+    html += '<div class="grid" onload="window.dispatchEvent(new Event(\'resize\'));">';
     for(var i = 0; i < arrayLength; i++){
       html += '<div class="grid-item"><div class="searchresult thumbnail">';
       html += '<img src="' + json.items[i].snippet.thumbnails.high.url  + '" alt="thumbnail" onload="window.dispatchEvent(new Event(\'resize\'));">';
@@ -48,6 +48,6 @@ function search() {
     fitWidth: true,
     gutter: 10
   });
-
+  new Promise( function() {setTimeout(function(){ window.dispatchEvent(new Event('resize'));}, 1000);} );  
   });
 }
