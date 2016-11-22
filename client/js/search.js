@@ -34,7 +34,7 @@ function search() {
     html += '<div class="grid">';
     for(var i = 0; i < arrayLength; i++){
       html += '<div class="grid-item"><div class="searchresult thumbnail">';
-      html += '<img src="' + json.items[i].snippet.thumbnails.high.url  + '" alt="thumbnail">';
+      html += '<img src="' + json.items[i].snippet.thumbnails.high.url  + '" alt="thumbnail" onload="window.dispatchEvent(new Event(\'resize\'));">';
       html += '<div class="caption"><h3 class="vtitle">' + json.items[i].snippet.title + '</h3>';
       html += '<p class="description">' + json.items[i].snippet.description + '</p></div>';
       html += '<div class="queueBtn"><a href="#" class="btn btn-warning btn-lg center-block qbutton" role="button">Put in Queue</a></div></div></div>';
