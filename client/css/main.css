@@ -8,13 +8,13 @@ body {
 }
 
 .searchresult{
-  min-height: 580px;
+/*  min-height: 580px;*/
 }
 .qbutton{
-  position: absolute;
+/*  position: absolute;
   bottom: 50px;
   width: calc(100% - 60px);
-  left: 30px;
+  left: 30px;*/
 }
 
 .custom-navbar {
@@ -67,6 +67,10 @@ body {
   width: 100% !important;
   margin-top: 50px;
 }
+.grid-item {
+  max-width: 300px
+
+}
 
 @media screen and (max-width: 620px) {
   .big-label {
@@ -96,5 +100,13 @@ body {
 #search-container {
   width: 90% !important;
   margin: 0 auto 0 auto;
+}
+.grid-item {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+.grid {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 }
