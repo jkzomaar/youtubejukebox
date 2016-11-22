@@ -19,13 +19,15 @@ function search() {
     var currentVideo = 0;
     window.scrollTo(0, 0);
     document.getElementById("search-button").disabled = true;
-    var q = $('#query').val() + " song";
+    var q = $('#query').val();
     var request = gapi.client.youtube.search.list({
         q: q,
         part: 'snippet',
         maxResults: 20,
         order: 'relevance',
-        type: 'video'
+        type: 'video',
+	videoCategoryId: '10',
+	videoDuration: 'medium'
     });
 
     request.execute(function(response) {
