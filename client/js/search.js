@@ -67,7 +67,7 @@ function search() {
                     new Promise(function() {
                         setTimeout(function() {
                             window.dispatchEvent(new Event('resize'));
-                        }, 1000);
+                        }, 1500);
                     });
                 }
             });
