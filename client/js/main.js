@@ -26,7 +26,33 @@ $( document ).ready(function() {
 
 
 function showQ(){
- $('#search-result').html('<pre class="block-center">todo: implement queue viewer</pre>');
+ 
+ $('#search-result').html('');
+    $.get("../../server/queue.csv", function(data, status){
+        //alert("Data: " + data + "\nStatus: " + status);
+        var linescsv = data.split("\n");
+        generatePlayList(linescsv);
+    });
+
+  function generatePlayList(apps)
+  {
+        var table_playlist = "<div class='panel panel-default'><div class='panel-heading'>Playlist</div><div class='panel-body'><table class='table table-striped table-bordered'><thead><tr><th>Position</th><th>Song Title</th><th>Duration</th></tr></thead><tbody>"; 
+        
+        for(i = 0;i < apps.length - 1; i++){
+                var temp = apps[i].split(",");
+                console.info(temp);
+                table_playlist += "<tr>";
+                table_playlist += "<td>" + (i + 1) + "</td>";
+                table_playlist += "<td>" + temp[1] + "</td>";
+                table_playlist += "<td>" + temp[2] + "</td>";
+                table_playlist += "</tr>";
+
+        }      
+                table_playlist += "</tbody>";
+                table_playlist += "</table></div></div>";
+ 	$('#search-result').html(table_playlist);
+  }
+ 
 }
 
 //http://stackoverflow.com/a/24290476/2820952
