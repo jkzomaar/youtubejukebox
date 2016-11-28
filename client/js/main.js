@@ -36,13 +36,25 @@ function showQ(){
 
   function generatePlayList(apps)
   {
-        var table_playlist = "<div class='panel panel-default'><div class='panel-heading'>Playlist</div><div class='panel-body'><table class='table table-striped table-hover'><thead><tr><th>Position</th><th>Song Title</th><th>Duration</th></tr></thead><tbody>"; 
+        var temp = apps[0].split(",");
+  //now playing
+        var table_playlist = "<div class='panel panel-success'><div class='panel-heading'><span class='glyphicon glyphicon-play-circle' aria-hidden='true'></span> Now Playing</div><div class='panel-body'><table class='table table-striped table-hover'><thead><th>Song Title</th><th>Duration</th></tr></thead><tbody>"; 
         
-        for(i = 0;i < apps.length - 1; i++){
+        table_playlist += "<tr>";
+        table_playlist += "<td>" + temp[1] + "</td>";
+        table_playlist += "<td>" + temp[2] + "</td>";
+        table_playlist += "</tr>";
+	  
+        table_playlist += "</tbody>";
+        table_playlist += "</table></div></div>";
+
+  //playlist	  
+	table_playlist += "<div class='panel panel-default'><div class='panel-heading'><span class='glyphicon glyphicon-list' aria-hidden='true'></span> Next up</div><div class='panel-body'><table class='table table-striped table-hover'><thead><tr><th>#</th><th>Song Title</th><th>Duration</th></tr></thead><tbody>"; 
+        
+        for(i = 1;i < apps.length - 1; i++){
                 var temp = apps[i].split(",");
-                console.info(temp);
                 table_playlist += "<tr>";
-                table_playlist += "<td>" + (i + 1) + "</td>";
+                table_playlist += "<td>" + (i) + "</td>";
                 table_playlist += "<td>" + temp[1] + "</td>";
                 table_playlist += "<td>" + temp[2] + "</td>";
                 table_playlist += "</tr>";
