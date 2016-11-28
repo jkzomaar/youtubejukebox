@@ -36,7 +36,7 @@ function showQ(){
 
   function generatePlayList(apps)
   {
-        var table_playlist = "<div class='panel panel-default'><div class='panel-heading'>Playlist</div><div class='panel-body'><table class='table table-striped table-bordered'><thead><tr><th>Position</th><th>Song Title</th><th>Duration</th></tr></thead><tbody>"; 
+        var table_playlist = "<div class='panel panel-default'><div class='panel-heading'>Playlist</div><div class='panel-body'><table class='table table-striped table-hover'><thead><tr><th>Position</th><th>Song Title</th><th>Duration</th></tr></thead><tbody>"; 
         
         for(i = 0;i < apps.length - 1; i++){
                 var temp = apps[i].split(",");
