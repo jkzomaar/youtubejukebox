@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top custom-navbar">
+    <nav class="navbar navbar-inverse custom-navbar">
         <div class="container-fluid wrapper">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-itemList" aria-expanded="false">
@@ -21,9 +21,10 @@
                 </button>
                 <a class="navbar-brand" id="jukeBox" href="#"><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>&nbsp;JukeBox Player</a>
             </div>
+	<p class="navbar-text" id="videoTitle">No song playing</p>
         </div>
     </nav>
-     <div id="videoContainer" class="container-fluid container">
+     <div id="videoContainer" class="fullscreen-bg" style="margin-top: 50px;">
     </div>
     <script src="js/jquery-3.1.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
