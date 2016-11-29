@@ -29,14 +29,15 @@ function showQ(){
  
  $('#search-result').html('');
     $.get("../../server/queue.csv", function(data, status){
-        //alert("Data: " + data + "\nStatus: " + status);
+       // alert("Data: " + data + "\nStatus: " + status);
         var linescsv = data.split("\n");
         generatePlayList(linescsv);
     });
 
   function generatePlayList(apps)
   {
-        var temp = apps[0].split(",");
+        console.log(apps);
+	var temp = apps[0].split(",");
   //now playing
         var table_playlist = "<div class='panel panel-success'><div class='panel-heading'><span class='glyphicon glyphicon-play-circle' aria-hidden='true'></span> Now Playing</div><div class='panel-body'><table class='table table-striped table-hover'><thead><th>Song Title</th><th>Duration</th></tr></thead><tbody>"; 
         
