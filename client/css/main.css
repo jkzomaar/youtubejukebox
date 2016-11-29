@@ -5,6 +5,7 @@ html {
 body {
     background: url('../img/jukebox-blur.jpg') no-repeat fixed;
     background-size: cover;
+    min-height: 100%;
 }
 
 .searchresult{
