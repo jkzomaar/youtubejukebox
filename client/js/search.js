@@ -95,12 +95,19 @@ function search() {
 
 function requestVideo(id, duration){
     $('#myModal').modal('show');
-    $.post("../../server/scripts/api/queue.php",
-    {
-        videoId: id,
-        durationString: duration
-    },
-    function(data, status){
-        alert("Data: " + data + "\nStatus: " + status);
-    }); 
+    var videoInfo = {
+        'videoId'	: id,
+        'durationString': duration
+    };
+    $.ajax({
+            url     : '../../server/scripts/api/queue.php',
+            data    : videoInfo,
+            dataType: 'json',
+            method  : 'post'
+        }).done(function(data){
+            console.log(data);
+        }).fail(function(data){
+            console.log(data);
+       });
+
 }
