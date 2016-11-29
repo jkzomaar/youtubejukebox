@@ -96,6 +96,7 @@ function search() {
 function requestVideo(id, duration){
     $('#myModal').modal('show');
     var videoInfo = {
+	'addToQueue' : true,
         'videoId'	: id,
         'durationString': duration
     };
