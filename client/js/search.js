@@ -53,7 +53,7 @@ function search() {
                 html += '<img src="' + json.items[tempVideo].snippet.thumbnails.high.url + '" alt="thumbnail" onload="window.dispatchEvent(new Event(\'resize\'));">';
                 html += '<div class="caption"><h3 class="vtitle">' + json.items[tempVideo].snippet.title + ' (' + duration + ')</h3>';
                 html += '<p class="description">' + json.items[tempVideo].snippet.description + '</p></div>';
-                html += '<div class="queueBtn"><a href="#" class="btn btn-warning btn-lg center-block qbutton" onclick="requestVideo();">Put in Queue</a></div></div></div>';
+                html += '<div class="queueBtn"><a href="#" class="btn btn-warning btn-lg center-block qbutton" onclick="requestVideo(\'' +json.items[tempVideo].id.videoId+'\', \'' + jsonDetail.items[0].contentDetails.duration + '\');">Put in Queue</a></div></div></div>';
                 if (currentVideo == (numberOfVideos - 1)) {
                     html+="</div>";
 		    html+="<div id='myModal' class='modal fade' role='dialog' style='margin-top: 75px;'>";
@@ -94,6 +94,13 @@ function search() {
 }
 
 function requestVideo(){
-	$('#myModal').modal('show');
-
+    $('#myModal').modal('show');
+    $.post("../../server/scripts/api/queue.php",
+    {
+        videoId: "Donald Duck",
+        duration: "4:20"
+    },
+    function(data, status){
+        alert("Data: " + data + "\nStatus: " + status);
+    }); 
 }
