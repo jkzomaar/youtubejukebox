@@ -93,12 +93,12 @@ function search() {
 
 }
 
-function requestVideo(){
+function requestVideo(id, duration){
     $('#myModal').modal('show');
     $.post("../../server/scripts/api/queue.php",
     {
-        videoId: "Donald Duck",
-        duration: "4:20"
+        videoId: id,
+        durationString: duration
     },
     function(data, status){
         alert("Data: " + data + "\nStatus: " + status);
