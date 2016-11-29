@@ -9,8 +9,16 @@ BLACKLIST_FILE=$DIR/../blacklist
 
 #get params
 VIDEO_ID=$1
+if [ -z "$VIDEO_ID" ]; then
+	echo "EMPTY VIDEO ID"
+	exit 1
+fi
 VIDEO_TITLE=$(youtube-dl --id https://www.youtube.com/watch?v=$VIDEO_ID -e --restrict-filenames --no-warnings)
 VIDEO_DURATION=$2
+if [ -z "$VIDEO_DURATION" ]; then
+	echo "EMPTY VIDEO DURATION"
+	exit 1
+fi
 
 if grep -q "$VIDEO_ID" "$BLACKLIST_FILE";then
 	echo "BLACKLISTED"
@@ -49,4 +57,3 @@ fi
 
 echo "SUCCESS"
 exit
-

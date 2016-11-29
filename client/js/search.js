@@ -68,8 +68,8 @@ function search() {
                         console.log('layout is complete');
                     });
                     $grid.imagesLoaded().progress( function() {
-  $grid.masonry('layout');
-});
+                        $grid.masonry('layout');
+                    });
                     // trigger initial layout
                     $grid.masonry();
 
@@ -89,7 +89,7 @@ function requestVideo(id, duration){
         'durationString': duration
     };
     $.ajax({
-        url     : '../../server/scripts/api/queue.php',
+        url     : '../server/scripts/api/queue.php',
         data    : videoInfo,
         dataType: 'json',
         method  : 'post'
