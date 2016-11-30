@@ -5,6 +5,8 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 QUEUE_FILE="$DIR/../queue.csv"
 VIDEO_ID=$1
 
+cd $DIR
+
 #check if we have a queue, exit if not.
 if [ ! -f $QUEUE_FILE ]; then
     echo "No queue found!"
