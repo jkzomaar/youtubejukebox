@@ -53,7 +53,10 @@ if grep -q "$VIDEO_ID" "$QUEUE_FILE"; then
 else
 	echo "Adding $VIDEOSTRING to play queue." >> $LOG_FILE
 	echo $VIDEOSTRING >> $QUEUE_FILE
+	echo "SUCCESS"
+	exit
 fi
 
-echo "SUCCESS"
+echo "SHOULD NOT BE ABLE TO GET HERE"
+
 exit

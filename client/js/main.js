@@ -26,9 +26,8 @@ $( document ).ready(function() {
 
 
 function showQ(){
- 
  $('#search-result').html('');
-    $.get("../../server/queue.csv", function(data, status){
+    $.get("../../server/queue.csv?n=1", function(data, status){
        // alert("Data: " + data + "\nStatus: " + status);
         var linescsv = data.split("\n");
         generatePlayList(linescsv);

@@ -82,6 +82,8 @@ function search() {
 }
 
 function requestVideo(id, duration){
+        $('#modalTitle').html("<span class='glyphicon glyphicon-time' aria-hidden='true'></span> Please wait</h4>");
+        $('#modalBody').html('<p>Requesting this video...</p>');
     $('#myModal').modal('show');
     var videoInfo = {
 	'addToQueue' : true,
@@ -94,9 +96,12 @@ function requestVideo(id, duration){
         dataType: 'json',
         method  : 'post'
     }).done(function(data){
-        console.log(data);
+        $('#modalTitle').html('<span class="glyphicon glyphicon-ok" aria-hidden="true"></span><h4> Succes!</h4>');
+        $('#modalBody').html('<p>The video was succesfully queued.</p>');
     }).fail(function(data){
         console.log(data);
+        $('#modalTitle').html('<span class="glyphicon glyphicon-remove" aria-hidden="true"></span><h4> Oops!</h4>');
+        $('#modalBody').html('<p>Something went wrong!</p>');
     });
 
 }
