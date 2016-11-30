@@ -25,4 +25,5 @@ if [[ $QUEUE_TOP == $VIDEO_ID ]]; then
     mv tempq  $QUEUE_FILE
 else
     echo "No such ID as top track"
+    exit 1
 fi
