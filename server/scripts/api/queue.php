@@ -22,7 +22,7 @@ function addToQueue($videoId = false, $durationString = false){
         return 'Invalid videoID';
     }
 
-    exec("bash -c 'exec nohup setsid bash /var/www/html/zomaar/server/scripts/download.sh $videoId $durationString  > /dev/null 2>&1 &'", $output, $returnValue);
+    exec("bash /srv/http/zomaarmusic.cinaed.be/public_html/server/scripts/download.sh $videoId $durationString", $output, $returnValue);
     if($returnValue != '0'){
         http_response_code(500);
         return $output;

@@ -42,7 +42,7 @@ function showQ(){
         
         table_playlist += "<tr>";
         table_playlist += "<td>" + temp[1] + "</td>";
-        table_playlist += "<td>" + temp[2] + "</td>";
+        table_playlist += "<td>" + convertDuration(temp[2]) + "</td>";
         table_playlist += "</tr>";
 	  
         table_playlist += "</tbody>";
@@ -56,7 +56,7 @@ function showQ(){
                 table_playlist += "<tr>";
                 table_playlist += "<td>" + (i) + "</td>";
                 table_playlist += "<td>" + temp[1] + "</td>";
-                table_playlist += "<td>" + temp[2] + "</td>";
+                table_playlist += "<td>" + convertDuration(temp[2]) + "</td>";
                 table_playlist += "</tr>";
 
         }      

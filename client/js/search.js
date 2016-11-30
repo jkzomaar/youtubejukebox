@@ -96,11 +96,11 @@ function requestVideo(id, duration){
         dataType: 'json',
         method  : 'post'
     }).done(function(data){
-        $('#modalTitle').html('<span class="glyphicon glyphicon-ok" aria-hidden="true"></span><h4> Succes!</h4>');
+        $('#modalTitle').html('<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Succes!</h4>');
         $('#modalBody').html('<p>The video was succesfully queued.</p>');
     }).fail(function(data){
         console.log(data);
-        $('#modalTitle').html('<span class="glyphicon glyphicon-remove" aria-hidden="true"></span><h4> Oops!</h4>');
+        $('#modalTitle').html('<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Oops!</h4>');
         $('#modalBody').html('<p>Something went wrong!</p>');
     });
 
