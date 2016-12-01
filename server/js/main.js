@@ -37,6 +37,7 @@ function loadVideo(){
             loadVideo();
         }).fail(function(data){
             console.log(data);
+            loadVideo();
         });
 
         } 

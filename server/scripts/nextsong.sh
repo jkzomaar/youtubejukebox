@@ -32,5 +32,5 @@ if [[ $QUEUE_TOP == $VIDEO_ID ]]; then
     exit 0
 else
     echo "No such ID as top track"
-    exit 1
+    exit 0
 fi
