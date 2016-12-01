@@ -23,14 +23,11 @@ function loadVideo(){
         $('#videoTitle').html(video[1]);
 	document.getElementById('videoPlayer').addEventListener('ended',nextVideoHandler,false);
         function nextVideoHandler(e) {
-            // What you want to do after the event
-            alert("we're done");
-
 	    var nextVideo = {
 		'nextSong' : true,
-	        'currentSongId'	: video[0],
-	    };
-
+	        'currentSongID'	: video[0]
+	    };	
+	    console.log(nextVideo);
             $.ajax({
             url     : '../server/scripts/api/queue.php',
             data    : nextVideo,
