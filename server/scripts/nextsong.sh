@@ -22,6 +22,11 @@ fi
 QUEUE_TOP=$(cat $QUEUE_FILE | head -n 1 | cut -d "," -f 1)
 
 if [[ $QUEUE_TOP == $VIDEO_ID ]]; then
+    if cat $QUEUE_FILE | wc -l -eq 1 || cat $QUEUE_FILE | wc -l -eq 0
+
+
+   
+	
     echo "Skipping to next track."
     tail -n +2 $QUEUE_FILE > tempq
     mv tempq  $QUEUE_FILE
