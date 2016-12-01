@@ -1,6 +1,6 @@
 $( document ).ready(function() {
-
-loadVideo();
+	$.ajaxSetup({ cache: false });
+	loadVideo();
 });
 
 function loadVideo(){

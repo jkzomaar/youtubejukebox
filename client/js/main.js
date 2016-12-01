@@ -1,4 +1,5 @@
 $( document ).ready(function() {
+  $.ajaxSetup({ cache: false });
   $('#query').keypress(function(e){
       if(e.which == 13) {
         $('#search-button').click();
@@ -27,7 +28,7 @@ $( document ).ready(function() {
 
 function showQ(){
  $('#search-result').html('');
-    $.get("../../server/queue.csv?n=1", function(data, status){
+    $.get("../../server/queue.csv", function(data, status){
        // alert("Data: " + data + "\nStatus: " + status);
         var linescsv = data.split("\n");
         generatePlayList(linescsv);
