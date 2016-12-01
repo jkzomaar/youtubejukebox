@@ -27,7 +27,7 @@ if [[ $QUEUE_TOP == $VIDEO_ID ]]; then
 #    fi
 
 #delete video done playing
-    rm $DIR/../video/$VIDEO_ID.webm
+    rm -f $DIR/../video/$VIDEO_ID.webm
     echo "Skipping to next track."
 
 #remove first line from queue file
