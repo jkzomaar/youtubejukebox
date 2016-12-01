@@ -26,7 +26,11 @@ if [[ $QUEUE_TOP == $VIDEO_ID ]]; then
 #        exit
 #    fi
 
+#delete video done playing
+    rm $DIR/../video/$VIDEO_ID.webm
     echo "Skipping to next track."
+
+#remove first line from queue file
     tail -n +2 $QUEUE_FILE > $DIR/tempq
     cat $DIR/tempq > $QUEUE_FILE
     exit 0
