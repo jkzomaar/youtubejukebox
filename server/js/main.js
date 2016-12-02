@@ -22,6 +22,7 @@ function loadVideo(){
         $('#videoContainer').html(html);
         $('#videoTitle').html(video[1]);
 	document.getElementById('videoPlayer').addEventListener('ended',nextVideoHandler,false);
+	document.getElementById('videoPlayerSource').addEventListener('error',nextVideoHandler,false);
         function nextVideoHandler(e) {
 	    var nextVideo = {
 		'nextSong' : true,
