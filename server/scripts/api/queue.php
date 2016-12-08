@@ -29,7 +29,7 @@ function addToQueue($videoId = false, $durationString = false){
     }
 
     exec("bash /srv/http/zomaarmusic.cinaed.be/public_html/server/scripts/download.sh $videoId $durationString", $output, $returnValue);
-    if($returnValue != '0'){
+    if(intval($returnValue) !== 0){
         http_response_code(500);
         return $output;
     }
@@ -50,7 +50,7 @@ function playNextSong($currentSongID = false){
     }
 
     exec("bash /srv/http/zomaarmusic.cinaed.be/public_html/server/scripts/nextsong.sh $currentSongID", $output, $returnValue);
-    if($returnValue != '0'){
+    if(intval($returnValue) !== 0){
         http_response_code(500);
         return $output;
     }
